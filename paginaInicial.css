@@ -6,7 +6,7 @@ body{
 nav {
     background-color: #333;
     color: white;
-    padding: 15px;
+    padding: 20px;
     overflow: hidden;
     
 }
@@ -27,8 +27,38 @@ li a {
     color: white;
     text-decoration: none;
     padding: 14px 16px;
+    transition: background-color 0.3s ease;
+    border-radius: 10px;
 }
 
 li a:hover {
-    background-color: rgb(83, 13, 83);
+    background-color: #575757;
+}
+p {
+    color: white;
+    font-size: 18px;
+    margin: 20px 0;
+}
+
+h1 {
+    color: white;
+    text-align: center;
+    margin-top: 50px;
+}
+
+.container {
+    width: 80%;
+    margin: auto;
+    padding: 20px;
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+}
+.profile-image {
+    margin-left: 40px;
+    max-width: 200px;
+    height: auto;
+    border-radius: 100px;
+    border: 5px solid #fff;
+    margin-top: 50px;
 }
