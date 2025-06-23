@@ -20,31 +20,54 @@
     </div>
     <div class="container">
         <div>
-            <h1>João Santos</h1>
-            <p>Bem-vindo ao meu site pessoal! Aqui encontrará informações sobre mim, as minhas qualidades e como entrar
-                em contato.</p>
-            <p>Sou um entusiasta da tecnologia e apaixonado por aprender novas habilidades. Este site é uma forma de
-                partilhar um pouco sobre mim e as minhas paixões.</p>
+            <h1 id="typed_nome"></h1>
+            <p id="typed-text"></p>
+            <p id="typed_text1"></p>
         </div>
         <img src="/Image/foto_perfil.jpg" alt="Foto de João Santos" class="profile-image">
     </div>
     <div class="container_habilidades">
-        <div>
-            <h2>HABILIDADES</h2>
-            <p></p>
-            <p></p>
-            <p></p>
-            <p></p>
+        <div id="descricao-linguas">
+            <h2>QUALIDADES</h2>
+            <p id="desc-html" style="display: none;">HTML: Linguagem de marcação para estruturar páginas web.</p>
+            <p id="desc-css" style="display: none;">CSS: Linguagem de estilos para páginas web</p>
+            <p id="desc-javascript" style="display: none;">JavaScript: Linguagem de programação para web interativa.</p>
+            <p id="desc-python" style="display: none;">Python: Linguagem de programação versátil e poderosa.</p>
+            <p id="desc-c" style="display: none;">C: Linguagem de programação de baixo nível e alto desempenho.</p>
         </div>
-        <div class ="Conjunto_linguas">
+        <div class="Conjunto_linguas">
             <ul class="linguas">
-                <li class="lingua_individual"><img src="/Image/HTML.png" alt=""></li>
-                <li class="lingua_individual"><img src="" alt=""></li>
-                <li class="lingua_individual"><img src="/Image/javascript.png" alt=""></li>
-                <li class="lingua_individual"><img src="/Image/python.webp" alt=""></li>
-                <li class="lingua_individual"><img src="/Image/C.png" alt=""></li>
+                <li class="lingua_individual" data-lingua="html"><img src="/Image/HTML.png" alt=""></li>
+                <li class="lingua_individual" data-lingua="css"><img src="/Image/css.png" alt=""></li>
+                <li class="lingua_individual" data-lingua="javascript"><img src="/Image/javascript.png" alt=""></li>
+                <li class="lingua_individual" data-lingua="python"><img src="/Image/python.webp" alt=""></li>
+                <li class="lingua_individual" data-lingua="c"><img src="/Image/C.png" alt=""></li>
             </ul>
         </div>
+    </div>
+    <div class="container_projetos_titulo">
+        <h2>PROJECTOS</h2>
+    </div>
+    <div class="container_projetos">
+        <div class="carousel-buttons-left">
+            <button class="arrow left">&#8592;</button>
+        </div>
+        <div class="carousel">
+            
+            <div class="carousel-main">
+                <div class="carousel-stack">
+                    <img class="carousel-img behind left" id="left-img" src="" alt="">
+                    <img class="carousel-img main" id="main-project-img" src="" alt="">
+                    <img class="carousel-img behind right" id="right-img" src="" alt="">
+                </div>
+                <div id="main-project-title"></div>
+            </div>
+            
+        </div>
+        <div class="carousel-buttons-right">
+            <button class="arrow right">&#8594;</button>
+        </div>
+
     </div>
 </body>
 
