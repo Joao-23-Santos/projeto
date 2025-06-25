@@ -1,23 +1,3 @@
-let intervalo_tempoID;
-const cores = ['rgb(83, 13, 83)', 'rgb(13, 83, 83)', 'rgb(83, 83, 13)', 'rgb(13, 13, 83)'];
-
-document.querySelectorAll('.nav_li').forEach(li => {
-    let step = 0;
-    li.addEventListener('mouseenter', function() {
-        const link = li.querySelector('a');
-        intervalo_tempoID = setInterval(() => {
-            link.style.backgroundColor = cores[step % cores.length];
-            step++;
-        }, 700);
-    });
-    li.addEventListener('mouseleave', function() {
-        clearInterval(intervalo_tempoID);
-        const link = li.querySelector('a');
-        link.style.backgroundColor = '';
-        step = 0;
-    });
-});
-
 document.querySelectorAll('.lingua_individual').forEach(item => {
     item.addEventListener('click', function() {
         document.querySelectorAll('#descricao-linguas p').forEach(p => p.style.display = 'none');
@@ -90,3 +70,22 @@ document.querySelector('.arrow.right').onclick = function() {
 };
 
 updateCarousel();
+
+const btnContacto = document.getElementById('btn-contacto');
+const formContacto = document.getElementById('form-contacto');
+const backdrop = document.getElementById('form-contacto-backdrop');
+
+btnContacto.addEventListener('click', function() {
+    const isVisible = formContacto.style.display === 'block';
+    formContacto.style.display = isVisible ? 'none' : 'block';
+    backdrop.style.display = isVisible ? 'none' : 'block';
+    if (!isVisible) {
+        window.scrollTo({top: 0, behavior: 'smooth'});
+    }
+});
+
+// Fechar ao clicar no fundo escurecido
+backdrop.addEventListener('click', function() {
+    formContacto.style.display = 'none';
+    backdrop.style.display = 'none';
+});
