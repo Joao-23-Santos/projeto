@@ -1,56 +1,182 @@
-body{
-    background-color: #000000;
+body {
     font-family: Arial, sans-serif;
+    max-width: 100vw;
+    overflow-x: hidden;
+    background: linear-gradient(-45deg, #1a0033, #333399, #660066, #000000);
+    background-size: 400% 400%;
+    animation: gradientMove 15s ease infinite;
 }
 
+@keyframes gradientMove {
+    0% {background-position: 0% 50%;}
+    50% {background-position: 100% 50%;}
+    100% {background-position: 0% 50%;}
+}
+
+/* NAVBAR */
 nav {
-    background-color: #333;
-    color: white;
-    padding: 20px;
-    overflow: hidden;
-    
+    background: linear-gradient(90deg, #1a0033 60%, #333399 100%);
+    color: #fff;
+    padding: 20px 0;
+    box-shadow: 0 2px 16px rgba(26,0,51,0.25);
+    border-bottom: 2px solid #333399;
 }
 
-ul {
-    list-style-type: none;
+nav ul {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    gap: 40px;
     margin: 0;
     padding: 0;
-    
 }
 
 li {
-    display: inline;
-    
+    display: inline-block;
 }
 
-li a {
-    color: white;
+li a, li button {
+    color: #fff;
+    background: transparent;
+    border: none;
     text-decoration: none;
-    padding: 14px 16px;
-    transition: background-color 0.3s ease;
+    padding: 12px 28px;
+    border-radius: 8px;
+    font-size: 1.1em;
+    font-family: inherit;
+    transition: background 0.3s, color 0.3s, box-shadow 0.3s, transform 0.2s;
+    cursor: pointer;
+    box-shadow: 0 0 0 transparent;
+}
+
+li a:hover, li button:hover {
+    background: #660066;
+    color: #fff;
+    box-shadow: 0 2px 8px #66006655;
+    transform: scale(1.07);
+}
+
+/* FORMULÁRIO MODAL */
+#form-contacto {
+    display: none;
+    position: fixed;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+    z-index: 1001;
+    background: linear-gradient(135deg, #1a0033 60%, #333399 100%);
+    padding: 36px 32px 28px 32px;
+    border-radius: 18px;
+    box-shadow: 0 8px 32px rgba(26,0,51,0.7);
+    color: #fff;
+    min-width: 320px;
+    max-width: 95vw;
+    border: 2px solid #660066;
+}
+
+#form-contacto h2 {
+    color: #fff;
+    margin-bottom: 18px;
+    letter-spacing: 2px;
+}
+
+#form-contacto label {
+    color: #ccc;
+    margin-bottom: 4px;
+    display: block;
+    font-size: 1em;
+}
+
+#form-contacto input,
+#form-contacto textarea {
+    display: block;
+    width: 100%;
+    margin-bottom: 16px;
+    padding: 10px;
+    border-radius: 8px;
+    border: 1px solid #333399;
+    font-size: 1em;
+    background: #2a1850;
+    color: #fff;
+    transition: border 0.2s;
+}
+
+#form-contacto input:focus,
+#form-contacto textarea:focus {
+    border: 1.5px solid #7d3fd6;
+    outline: none;
+}
+
+#form-contacto button {
+    background: #660066;
+    color: #fff;
+    cursor: pointer;
+    border: none;
     border-radius: 10px;
+    padding: 18px 0;
+    font-size: 1.2em;
+    font-weight: bold;
+    width: 100%;
+    transition: background 0.2s, box-shadow 0.2s, transform 0.2s;
+    box-shadow: 0 2px 8px #66006644;
+    margin-top: 10px;
+}
+#form-contacto button:hover {
+    background: #333399;
+    box-shadow: 0 4px 16px #33339966;
+    transform: scale(1.05);
 }
 
-li a:hover {
-    background-color: #575757;
-}
-p {
-    color: white;
-    font-size: 18px;
-    margin: 20px 0;
+/* Fundo escurecido atrás do formulário */
+#form-contacto-backdrop {
+    display: none;
+    position: fixed;
+    top: 0; left: 0; right: 0; bottom: 0;
+    background: rgba(26,0,51,0.7);
+    z-index: 1000;
 }
 
-h1 {
-    color: white;
+/* FOOTER */
+footer {
+    width: 100%;
+    background: linear-gradient(90deg, #1a0033 60%, #333399 100%);
+    color: #fff;
+    padding: 32px 0 18px 0;
     text-align: center;
-    margin-top: 50px;
+    margin-top: 40px;
+    border-top: 2px solid #660066;
+    box-shadow: 0 -2px 16px rgba(26,0,51,0.5);
 }
 
-h2 {
-    color: white;
-    text-align: center;
-    margin-top: 20px;
+.container_footer {
+    max-width: 900px;
+    margin: 0 auto;
+    padding: 0 20px;
 }
+
+footer p {
+    margin: 8px 0;
+    font-size: 1.1em;
+    color: #ccc;
+    letter-spacing: 1px;
+}
+
+footer p:first-child {
+    font-weight: bold;
+    color: #fff;
+    font-size: 1.2em;
+}
+
+footer a {
+    color: #7abaff;
+    text-decoration: underline;
+    transition: color 0.2s;
+}
+footer a:hover {
+    color: #fff;
+}
+
+/* ----------- EXTRAS ÚTEIS PARA O RESTO DO SITE ----------- */
 
 .container {
     width: 80%;
@@ -59,6 +185,7 @@ h2 {
     display: flex;
     align-items: center;
     justify-content: space-between;
+    min-height: 120px;
 }
 .profile-image {
     margin-left: 40px;
@@ -78,24 +205,24 @@ h2 {
 }
 .lingua_individual {
     margin: 0 45px;
-    padding: 0; /* Remove o padding para não distorcer o círculo */
-    border-radius: 50%; /* Torna o item circular */
-    background-color: white; /* Remove fundo */
+    padding: 0;
+    border-radius: 50%;
+    background-color: white;
     display: flex;
     align-items: center;
     justify-content: center;
-    width: 60px;   /* Ajuste conforme o tamanho desejado */
+    width: 60px;
     height: 60px;
 }
 
 .lingua_individual img {
-    width: 100px;   /* Ajuste conforme necessário */
+    width: 100px;
     height: 100px;
-    border-radius: 50%;      /* Torna a imagem circular */
-    border: 5px solid purple;  /* Borda branca */
-    object-fit: cover;       /* Garante que a imagem preencha o círculo */
+    border-radius: 50%;
+    border: 5px solid purple;
+    object-fit: cover;
     background-color: white;
-    padding: 5px; /* Espaçamento interno */
+    padding: 5px;
 }
 
 .conjunto_linguas {
@@ -110,15 +237,13 @@ h2 {
     margin-top: 75px;
     padding: 20px;
     display: flex;
-    ;
-    align-items: center;
-    justify-content: space-between;
     align-items: stretch;
+    justify-content: space-between;
 }
 
 .lingua_individual:hover {
-    transform: scale(1.1); /* Aumenta o tamanho ao passar o mouse */
-    transition: transform 0.3s ease; /* Transição suave */
+    transform: scale(1.1);
+    transition: transform 0.3s ease;
 }
 
 #descricao-linguas {
@@ -139,10 +264,11 @@ h2 {
     justify-content: space-between;
 }
 
-.container_projetos h2 {
+.container_projetos_titulo {
     width: 100%;
     text-align: center;
-    margin-bottom: 100px;
+    padding: 5px;
+    margin-top: 150px;
 }
 
 .carousel {
@@ -208,26 +334,6 @@ h2 {
     text-align: center;
 }
 
-.carousel-side {
-    display: flex;
-    flex-direction: column;
-    gap: 15px;
-}
-
-.side-project {
-    width: 80px;
-    height: 50px;
-    object-fit: cover;
-    border-radius: 8px;
-    border: 2px solid #888;
-    opacity: 0.7;
-    cursor: pointer;
-    transition: opacity 0.2s;
-}
-.side-project:hover {
-    opacity: 1;
-}
-
 .arrow {
     background: #333;
     color: #fff;
@@ -242,23 +348,4 @@ h2 {
 }
 .arrow:hover {
     background: #575757;
-}
-
-.carousel-buttons-left {
-    display: flex;
-    justify-content: left;
-    align-items: center;
-}
-
-.carousel-buttons-right {
-    display: flex;
-    justify-content: right;
-    align-items: center;
-}
-
-.container_projetos_titulo {
-    width: 100%;
-    text-align: center;
-    padding: 5px;
-    margin-top: 150px;
 }
