@@ -3,17 +3,13 @@ import yagmail
 from flask_cors import CORS
 import os
 
-app = Flask(__name__,static_folder='static', template_folder='templates')
+app = Flask(__name__)
 CORS(app)
 
 EMAIL = os.environ.get('EMAIL')  # Replace with your actual email
 PASSWORD = os.environ.get('EMAIL_PASSWORD')  # Replace with your actual password
 
 yag = yagmail.SMTP(EMAIL, PASSWORD)
-
-@app.route('/')
-def index():
-    return render_template('index.html')
 
 
 @app.route('/send-email', methods=['POST'])
