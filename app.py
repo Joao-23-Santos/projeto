@@ -3,7 +3,7 @@ import yagmail
 from flask_cors import CORS
 import os
 
-app = Flask(__name__,static_folder='static')
+app = Flask(__name__,static_folder='static', template_folder='templates')
 CORS(app)
 
 EMAIL = os.environ.get('EMAIL')  # Replace with your actual email
