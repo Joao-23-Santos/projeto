@@ -1,5 +1,8 @@
 body {
-    font-family: Arial, sans-serif;
+    font-family: 'Roboto', Arial, sans-serif;
+    color: #fff; /* Torna o texto padrão branco */
+    font-size: 1.08em; /* Tamanho base confortável */
+    line-height: 1.6;
     max-width: 100vw;
     overflow-x: hidden;
     background: linear-gradient(-45deg, #1a0033, #333399, #660066, #000000);
@@ -56,6 +59,31 @@ li a:hover, li button:hover {
     transform: scale(1.07);
 }
 
+h1 {
+    text-align: center;
+    margin-top: 60px;
+    font-size: 2.5em;
+    color: #fff;
+    text-shadow: 0 2px 4px rgba(0,0,0,0.5);
+}
+
+h1#typed_nome {
+    border: 3px solid #7abaff;
+    border-radius: 18px;
+    padding: 18px 36px;
+    background: rgba(26,0,51,0.60); /* leve fundo escuro translúcido */
+    box-shadow: 0 6px 32px #0008, 0 0 0 6px #33339955;
+    color: #fff;
+    text-shadow: 0 2px 8px #333399, 0 1px 0 #000;
+    display: inline-block;
+    margin: 60px auto 24px auto;
+    letter-spacing: 2px;
+    text-align: center;
+    width: 22ch;   /* ajusta para o tamanho máximo do nome */
+    max-width: 100vw;
+    display: block; /* <-- Troca para block */
+}
+
 /* FORMULÁRIO MODAL */
 #form-contacto {
     display: none;
@@ -81,10 +109,10 @@ li a:hover, li button:hover {
 }
 
 #form-contacto label {
-    color: #ccc;
+    color: #fff;
+    font-size: 1em;
     margin-bottom: 4px;
     display: block;
-    font-size: 1em;
 }
 
 #form-contacto input,
@@ -95,9 +123,9 @@ li a:hover, li button:hover {
     padding: 10px;
     border-radius: 8px;
     border: 1px solid #333399;
-    font-size: 1em;
-    background: #2a1850;
+    font-size: 1.08em;
     color: #fff;
+    background: #2a1850;
     transition: border 0.2s;
 }
 
@@ -114,7 +142,7 @@ li a:hover, li button:hover {
     border: none;
     border-radius: 10px;
     padding: 18px 0;
-    font-size: 1.2em;
+    font-size: 1.15em;
     font-weight: bold;
     width: 100%;
     transition: background 0.2s, box-shadow 0.2s, transform 0.2s;
@@ -247,9 +275,19 @@ footer a:hover {
 }
 
 #descricao-linguas {
-    color: white;
+    border: 3px solid #7abaff;
+    border-radius: 18px;
+    padding: 18px 36px;
+    background: rgba(26,0,51,0.60); /* leve fundo escuro translúcido */
+    box-shadow: 0 6px 32px #0008, 0 0 0 6px #33339955;
+    color: #fff;
+    text-shadow: 0 2px 8px #333399, 0 1px 0 #000;
+    display: inline-block;
+    letter-spacing: 2px;
     text-align: center;
-    display: block;
+    width: 100ch;   /* ajusta para o tamanho máximo do nome */
+    max-width: 100vw;
+    display: block; /* <-- Troca para block */
 }
 
 .container_projetos {
@@ -328,24 +366,37 @@ footer a:hover {
 }
 
 #main-project-title {
-    color: white;
-    margin-top: 10px;
+    color: #fff;
     font-size: 1.3em;
     text-align: center;
+    margin-top: 10px;
 }
 
 .arrow {
-    background: #333;
+    background: linear-gradient(135deg, #660066 60%, #333399 100%);
     color: #fff;
     border: none;
-    font-size: 2em;
+    font-size: 2.2em;
     border-radius: 50%;
-    width: 45px;
-    height: 45px;
+    width: 54px;
+    height: 54px;
     cursor: pointer;
-    transition: background 0.2s;
+    transition: 
+        background 0.25s,
+        box-shadow 0.25s,
+        transform 0.18s;
     margin-bottom: 40px;
+    box-shadow: 0 4px 18px #1a003355, 0 1.5px 0 #fff inset;
+    outline: none;
+    display: flex;
+    align-items: center;
+    justify-content: center;
 }
-.arrow:hover {
-    background: #575757;
+
+.arrow:hover, .arrow:focus {
+    background: linear-gradient(135deg, #333399 60%, #660066 100%);
+    color: #7abaff;
+    box-shadow: 0 8px 32px #33339977, 0 2px 0 #fff inset;
+    transform: scale(1.13);
+    border: 2px solid #7abaff;
 }
