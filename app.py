@@ -23,7 +23,7 @@ def send_email():
         return jsonify({'error': 'Missing required fields'}), 400
 
     try:
-        yag.send(to=email, subject=nome, contents=mensagem)
+        yag.send(to=EMAIL, subject=nome, contents=mensagem)
         return jsonify({'message': 'Email sent successfully!'}), 200
     except Exception as e:
         return jsonify({'error': str(e)}), 500
