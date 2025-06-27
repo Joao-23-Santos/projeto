@@ -4,7 +4,7 @@ from flask_cors import CORS
 import os
 
 app = Flask(__name__)
-CORS(app)
+CORS(app, origins='https://projeto-kxn1.onrender.com')
 
 EMAIL = os.environ.get('EMAIL')  # Replace with your actual email
 PASSWORD = os.environ.get('EMAIL_PASSWORD')  # Replace with your actual password
@@ -23,7 +23,7 @@ def send_email():
         return jsonify({'error': 'Missing required fields'}), 400
 
     try:
-        yag.send(to=EMAIL, subject=nome, contents=mensagem)
+        yag.send(to=EMAIL, subject=email, contents= nome+mensagem)
         return jsonify({'message': 'Email sent successfully!'}), 200
     except Exception as e:
         return jsonify({'error': str(e)}), 500
