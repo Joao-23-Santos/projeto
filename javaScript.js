@@ -95,22 +95,3 @@ document.querySelectorAll('.arrow').forEach(btn => {
         btn.blur();
     });
 });
-
-document.getElementById('form-contacto').addEventListener('submit', function(event) {
-    event.preventDefault();
-    const dados = {
-        nome: document.getElementById('nome').value,
-        email: document.getElementById('email').value,
-        mensagem: document.getElementById('mensagem').value
-    };
-    fetch('https://portfolio-joao-santos.onrender.com/enviar-email', {
-        method: 'POST',
-        headers: {
-            'Content-Type': 'application/json'
-        },
-        body: JSON.stringify(dados)
-    })
-    .then(r => r.json())
-    .then(res => res.alert(res.mensagem))
-    .then(err => alert('Erro: ' + err.message));
-    })  
