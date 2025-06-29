@@ -95,3 +95,35 @@ document.querySelectorAll('.arrow').forEach(btn => {
         btn.blur();
     });
 });
+
+// Função para enviar o formulário
+function enviarFormulario(event) {
+    event.preventDefault(); // Impede o envio padrão do formulário
+
+    // Obter os valores dos campos
+    const nome = document.getElementById('nome').value;
+    const email = document.getElementById('email').value;
+    const mensagem = document.getElementById('mensagem').value;
+
+    // Validar campos (exemplo simples)
+    if (!nome || !email || !mensagem) {
+        return alert('Por favor, preencha todos os campos.');
+    }
+
+    // Enviar dados para o servidor
+    fetch('https://portfolio-joao-santos.onrender.com/enviar-email', {
+        method: 'POST',
+        headers: { 'Content-Type': 'application/json' },
+        body: JSON.stringify({
+            nome: nome,
+            email: email,
+            mensagem: mensagem
+        })
+    })
+    .then(response => response.json())
+    .then(data => alert(data.mensagem))
+    .catch(error => alert('Erro ao enviar: ' + error.message));
+}
+
+// Adicionar listener ao formulário
+formContacto.addEventListener('submit', enviarFormulario);
