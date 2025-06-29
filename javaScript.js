@@ -111,7 +111,7 @@ function enviarFormulario(event) {
     }
 
     // Enviar dados para o servidor
-    fetch('https://portfolio-joao-santos.onrender.com/enviar-email', {
+    fetch('https://server-portfolio-u82v.onrender.com/enviar-email', {
         method: 'POST',
         headers: { 'Content-Type': 'application/json' },
         body: JSON.stringify({
